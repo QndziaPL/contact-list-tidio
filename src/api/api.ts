@@ -1,4 +1,4 @@
-import mockData from "./mockData.json";
+import mockData from "../mockData.json";
 
 let cursor = -1;
 const size = 10;
@@ -17,3 +17,5 @@ export default async function apiData() {
   const end = cursor * size + size;
   return mockData.slice(start, end);
 }
+
+export type IContact = typeof mockData[number]
