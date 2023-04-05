@@ -1,4 +1,4 @@
-import mockData from "../mockData.json";
+import mockData from "../mocks/mockData.json";
 
 let cursor = -1;
 const size = 10;
