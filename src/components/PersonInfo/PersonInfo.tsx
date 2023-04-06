@@ -24,6 +24,7 @@ const PersonInfo = forwardRef<HTMLDivElement, IPersonInfoProps>(
         "selected-person": selected,
       })}
       onClick={triggerSelectedState}
+      data-testid="person-info"
     >
       <div className="topContainer">
         <div className="initialsInCircle">

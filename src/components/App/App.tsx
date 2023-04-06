@@ -1,5 +1,6 @@
 import React, {
   createRef,
+  useCallback,
   useEffect,
   useLayoutEffect,
   useMemo,
@@ -43,19 +44,6 @@ function App() {
     }
   };
 
-  const triggerSelectedState = (id: string) => {
-    setSelected((prev) => {
-      const index = prev.indexOf(id);
-      if (index === -1) return [...prev, id];
-      const copy = [...prev];
-      copy.splice(index, 1);
-      return copy;
-    });
-    listContainerScrollValue.current = getListContainerScrollValue(
-      personInfoRefs[id].current
-    );
-  };
-
   useEffect(() => {
     mounted.current = true;
     getData();
@@ -88,10 +76,26 @@ function App() {
     [dataSorted]
   );
 
+  const triggerSelectedState = useCallback(
+    (id: string) => {
+      setSelected((prev) => {
+        const index = prev.indexOf(id);
+        if (index === -1) return [...prev, id];
+        const copy = [...prev];
+        copy.splice(index, 1);
+        return copy;
+      });
+      listContainerScrollValue.current = getListContainerScrollValue(
+        personInfoRefs[id].current
+      );
+    },
+    [personInfoRefs, setSelected]
+  );
+
   return (
     <div className="App">
       <div className="selected">Selected contacts: {selected.length}</div>
-      <div className="list" ref={listContainerRef}>
+      <div role="list" className="list" ref={listContainerRef}>
         {dataSorted.map(({ id, ...data }) => (
           <PersonInfo
             key={id}

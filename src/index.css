@@ -9,10 +9,11 @@ body {
 }
 
 :root {
+  --color-primary: #009ca1;
+  --color-red: #e74c3c;
   --fetch-success-color: #fff;
-  --fetch-error-color: #ff6060;
-  --fetch-loading-color: #03a1ff;
-  --card-outline-color: #00b002;
+  --fetch-error-color: var(--color-red);
+  --fetch-loading-color: var(--color-primary);
 }
 
 code {
@@ -72,11 +73,11 @@ code {
 }
 
 .person-info:hover {
-  border-color: pink;
+  border-color: var(--color-red);
 }
 
 .person-info.selected-person {
-  border-color: var(--card-outline-color);
+  border-color: var(--color-primary);
 }
 
 .topContainer {
@@ -109,7 +110,8 @@ code {
 
 .jobTitle {
   text-transform: uppercase;
-  color: #e74c3c;
+  color: var(--color-red);
+  /*color: #e74c3c;*/
   font-size: 20px;
   font-weight: 400;
 }
