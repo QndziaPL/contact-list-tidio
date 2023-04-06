@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/contact-list-tidio/static/css/main.a58e8047.css",
+    "main.js": "/contact-list-tidio/static/js/main.b2856025.js",
+    "index.html": "/contact-list-tidio/index.html",
+    "main.a58e8047.css.map": "/contact-list-tidio/static/css/main.a58e8047.css.map",
+    "main.b2856025.js.map": "/contact-list-tidio/static/js/main.b2856025.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a58e8047.css",
+    "static/js/main.b2856025.js"
+  ]
+}
