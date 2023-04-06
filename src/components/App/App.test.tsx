@@ -2,11 +2,13 @@ import { act, fireEvent, render, waitFor } from "@testing-library/react";
 import apiData, { IContact } from "../../api/api";
 import App from "./App";
 import mockDataJson from "../../mocks/mockData.json";
+import fn = jest.fn;
 
 jest.mock("../../api/api");
 
 describe("App component", () => {
   const mockedApiData = apiData as jest.MockedFunction<typeof apiData>;
+  window.HTMLElement.prototype.scrollIntoView = fn();
 
   const mockData: IContact[] = mockDataJson.slice(0, 2);
 

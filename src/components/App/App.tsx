@@ -76,6 +76,17 @@ function App() {
     [dataSorted]
   );
 
+  useLayoutEffect(() => {
+    if (fetchState.newId) {
+      const newlyFetchedPerson = personInfoRefs[fetchState.newId];
+      if (newlyFetchedPerson && newlyFetchedPerson.current) {
+        newlyFetchedPerson.current?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [personInfoRefs, fetchState.newId]);
+
   const triggerSelectedState = useCallback(
     (id: string) => {
       setSelected((prev) => {
