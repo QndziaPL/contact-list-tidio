@@ -18,4 +18,4 @@ export default async function apiData() {
   return mockData.slice(start, end);
 }
 
-export type IContact = typeof mockData[number]
+export type IContact = (typeof mockData)[number];

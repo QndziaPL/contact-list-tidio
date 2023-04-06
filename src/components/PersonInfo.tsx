@@ -1,30 +1,34 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import classNames from "classnames";
+import { IContact } from "../api/api";
 
-type Props = {
-  data: {
-    firstNameLastName: string;
-    jobTitle: string;
-    emailAddress: string;
-  };
+export interface IPersonInfoProps {
+  data: Omit<IContact, "id">;
   selected: boolean;
   triggerSelectedState: () => void;
-};
+}
 
-function PersonInfo(props: Props) {
-  const { data, selected, triggerSelectedState } = props;
-  return (
+const PersonInfo = forwardRef<HTMLDivElement, IPersonInfoProps>(
+  (
+    {
+      triggerSelectedState,
+      selected,
+      data: { emailAddress, firstNameLastName, jobTitle },
+    },
+    ref
+  ) => (
     <div
+      ref={ref}
       className={classNames("person-info", {
-        ["selected-person"]: selected,
+        "selected-person": selected,
       })}
       onClick={triggerSelectedState}
     >
-      <div className="firstNameLastName">{data.firstNameLastName}</div>
-      <div className="jobTitle">{data.jobTitle}</div>
-      <div className="emailAddress">{data.emailAddress}</div>
+      <div className="firstNameLastName">{firstNameLastName}</div>
+      <div className="jobTitle">{jobTitle}</div>
+      <div className="emailAddress">{emailAddress}</div>
     </div>
-  );
-}
+  )
+);
 
 export default PersonInfo;

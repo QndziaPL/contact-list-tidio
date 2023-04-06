@@ -1,116 +1,121 @@
 body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #f4f4f4;
-  height: 100vh;
-  position: relative;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f4f4f4;
+    height: 100vh;
+    position: relative;
 }
 
 :root {
-  --fetch-success-color: #fff ;
-  --fetch-error-color: #ff6060;
-  --fetch-loading-color: #b7fffe;
+    --fetch-success-color: #fff;
+    --fetch-error-color: #ff6060;
+    --fetch-loading-color: #03a1ff;
+    --card-outline-color: #00b002;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
 .App {
-  position: relative;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: space-between;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
 }
 
 .list {
-  flex: 1;
-  max-height: 100vh;
-  overflow-y: auto;
-  max-width: 50rem;
-  padding: 0 5px;
+    flex: 1;
+    max-height: 100vh;
+    overflow-y: auto;
+    max-width: 50rem;
+    padding: 0 5px;
 }
 
 .selected {
-  color: #333333;
-  font-size: 26px;
-  font-weight: 700;
-  margin: 10px 20px;
+    color: #333333;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 10px 20px;
 }
 
-@media (max-width: 670px ) {
-  .App {
-    flex-direction: column;
-  }
+@media (max-width: 670px) {
+    .App {
+        flex-direction: column;
+    }
 
-  .list {
-    max-height: 90vh;
-  }
+    .list {
+        max-height: 90vh;
+    }
 
-  .selected {
-    margin: 20px;
-  }
+    .selected {
+        margin: 20px;
+    }
 }
 
 .person-info {
-  display: flex;
-  height: 100px;
-  justify-content: center;
-  flex-direction: column;
-  padding: 30px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
-  margin: 10px 0;
-  background: #fff;
-  cursor: pointer;
-  border: 2px solid transparent;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    margin: 10px 0;
+    background: #fff;
+    cursor: pointer;
+    border: 2px solid transparent;
 }
 
-.person-info:hover, .person-info.selected-person {
-  border-color: pink;
+.person-info:hover {
+    border-color: pink;
+}
+
+.person-info.selected-person {
+    border-color: var(--card-outline-color);
+
 }
 
 .firstNameLastName {
-  padding: 0 0 10px;
-  color: #333333;
-  font-size: 26px;
-  font-weight: 700;
+    padding: 0 0 10px;
+    color: #333333;
+    font-size: 26px;
+    font-weight: 700;
 }
 
 .jobTitle {
-  padding: 0 0 20px;
-  color: #e74c3c;
-  font-size: 20px;
-  font-weight: 400;
+    padding: 0 0 20px;
+    color: #e74c3c;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .emailAddress {
-  color: #666666;
-  font-size: 14px;
-  line-height: 1.8em;
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.8em;
 }
 
 .fetch-state-button {
-  padding: 20px 40px;
-  width: 100%;
-  font-size: 1.2rem;
-  margin: 20px 0;
-  cursor: pointer;
-  background-color: var(--fetch-success-color);
+    padding: 20px 40px;
+    width: 100%;
+    font-size: 1.2rem;
+    margin: 20px 0;
+    cursor: pointer;
+    background-color: var(--fetch-success-color);
 }
 
 .fetch-state-button:hover {
-  /*scale: 1.05;*/
+    filter: brightness(0.95);
 }
 
 .fetch-error-background {
-  background-color: var(--fetch-error-color);
+    background-color: var(--fetch-error-color);
 }
 
 .fetch-loading-background {
-  background-color: var(--fetch-loading-color);
+    background-color: var(--fetch-loading-color);
 }
