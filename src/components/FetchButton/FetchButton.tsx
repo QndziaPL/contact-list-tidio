@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from "react";
 import classNames from "classnames";
-import { Loader } from "./Loader";
+import { Loader } from "../Loader/Loader";
 
 export interface IFetchState {
   state: "error" | "loading" | "fetched";

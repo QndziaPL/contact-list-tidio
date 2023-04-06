@@ -1,4 +1,4 @@
-import { IContact } from "../api/api";
+import { IContact } from "../../api/api";
 
 export type ISortResult = 1 | -1 | 0;
 export type SortDataBasedOnSelectedFunctionType = (

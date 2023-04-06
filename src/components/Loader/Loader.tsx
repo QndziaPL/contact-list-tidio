@@ -19,7 +19,7 @@ export const Loader: FC<ISingleLetterWithColor> = ({
         }
         return 0;
       });
-    }, animationSpeed / 2);
+    }, animationSpeed);
 
     return () => {
       clearInterval(interval);
@@ -28,14 +28,15 @@ export const Loader: FC<ISingleLetterWithColor> = ({
 
   const output = [...content].map((letter, index) => (
     <span
+      data-testid="letter"
       key={index}
       style={{
-        color: index === activeContentIndex ? "#ff0000" : "black",
+        color: index === activeContentIndex ? "red" : "black",
       }}
     >
       {letter}
     </span>
   ));
 
-  return <div>{output}</div>;
+  return <div data-testid="loader">{output}</div>;
 };

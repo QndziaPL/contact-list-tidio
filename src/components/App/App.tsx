@@ -8,12 +8,12 @@ import React, {
 } from "react";
 import apiData, { IContact } from "../../api/api";
 import PersonInfo from "../PersonInfo/PersonInfo";
-import { FetchButton, IFetchState } from "../FetchButton";
+import { FetchButton, IFetchState } from "../FetchButton/FetchButton";
 import {
   getListContainerScrollValue,
   sortDataBasedOnId,
   sortDataBasedOnSelected,
-} from "../../helpers/helpers";
+} from "./helpers";
 import { IPersonInfoRef } from "./types";
 
 function App() {
