@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 import apiData, { IContact } from "../../api/api";
-import PersonInfo from "../PersonInfo";
+import PersonInfo from "../PersonInfo/PersonInfo";
 import { FetchButton, IFetchState } from "../FetchButton";
 import {
   getListContainerScrollValue,

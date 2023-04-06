@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import classNames from "classnames";
-import { IContact } from "../api/api";
+import { IContact } from "../../api/api";
+import { getFirstLettersOfTwoNames } from "./helpers";
 
 export interface IPersonInfoProps {
   data: Omit<IContact, "id">;
@@ -24,8 +25,15 @@ const PersonInfo = forwardRef<HTMLDivElement, IPersonInfoProps>(
       })}
       onClick={triggerSelectedState}
     >
-      <div className="firstNameLastName">{firstNameLastName}</div>
-      <div className="jobTitle">{jobTitle}</div>
+      <div className="topContainer">
+        <div className="initialsInCircle">
+          {getFirstLettersOfTwoNames(firstNameLastName)}
+        </div>
+        <div className="nameAndJobTitleContainer">
+          <div className="firstNameLastName">{firstNameLastName}</div>
+          <div className="jobTitle">{jobTitle}</div>
+        </div>
+      </div>
       <div className="emailAddress">{emailAddress}</div>
     </div>
   )
